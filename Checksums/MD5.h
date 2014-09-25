@@ -7,6 +7,9 @@
 #include <array>
 #include <vector>
 
+namespace tuvok
+{
+
 class MD5
 {
 public:
@@ -51,4 +54,5 @@ std::array<uint8_t,16> md5(Iter begin, Iter end) {
   return rv;
 }
 
+}
 #endif // MD5_H

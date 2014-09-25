@@ -1,6 +1,9 @@
 #include "MD5.h"
 #include <memory.h>
 
+namespace tuvok
+{
+
 #define MD5_INIT_STATE_0 0x67452301
 #define MD5_INIT_STATE_1 0xefcdab89
 #define MD5_INIT_STATE_2 0x98badcfe
@@ -103,7 +106,6 @@ static uint8_t PADDING[64] = {
 };
 
 using namespace std;
-
 
 uint32_t MD5::RotateLeft(uint32_t x, int n) { return (x << n) | (x >> (32-n));}
 
@@ -326,4 +328,6 @@ void MD5::Update(const uint8_t* Input, uint32_t nInputLen, int& error)
         }
 
         memmove(&m_lpszBuffer[nIndex], &Input[i], nInputLen-i);
+}
+
 }
